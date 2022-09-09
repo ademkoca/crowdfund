@@ -26,14 +26,19 @@
           align-items: flex-start;
           margin-left: 10px;
 
+          .card-pledge {
+            color: $cyanModerate !important;
+          }
           .modal-card-name {
             @extend .card-name;
             margin-bottom: 0;
+
           }
         }
       }
       p {
         margin-top: 0;
+        font-size: 16px;
       }
     }
   }

@@ -7,7 +7,7 @@ const TopMenu = () => {
     <>
       <div className="topMenu">
         <div className="left">
-          <a href="/">
+          <a href="/crowdfund">
             <img className="iconHome" src="assets/svg/logo.svg" alt="home" />
           </a>
         </div>

@@ -96,6 +96,7 @@
 .hero .heroBox .logo {
   position: absolute;
   top: -27px;
+  width: 100%;
 }
 .hero .heroBox .title {
   margin-top: 50px;
@@ -156,21 +157,33 @@
   }
   .hero .heroBox {
     bottom: -180px;
-    max-width: 1000px;
+    max-width: 800px;
   }
   .hero .cta-bookmark {
     width: 200px;
     border-radius: 30px !important;
     justify-content: flex-start !important;
-    background-color: #c6c6c6 !important;
+    background-color: #f4f8f9 !important;
+    cursor: pointer;
   }
   .hero .cta-bookmark span {
     display: inline !important;
-    margin: 0 20px;
+    margin: 0 20px 0px 15px;
     font-weight: 700;
+    cursor: pointer;
   }
   .hero .cta-bookmark.bookmarked span {
     color: hsl(176deg, 50%, 47%) !important;
+  }
+}
+@media screen and (max-width: 360px) {
+  .CTAs {
+    flex-direction: column;
+    align-items: center;
+    height: 150px;
+  }
+  .CTAs .cta-main {
+    font-size: 12px;
   }
 }
 .stats, .about {
@@ -228,7 +241,7 @@
 @media screen and (min-width: 1440px) {
   .stats, .about {
     margin-top: 225px;
-    max-width: 1000px;
+    max-width: 800px;
   }
   .stats .stat-items, .about .stat-items {
     display: flex;
@@ -318,7 +331,7 @@
 @media screen and (min-width: 1440px) {
   .stats, .about {
     margin-top: 225px;
-    max-width: 1000px;
+    max-width: 800px;
   }
   .stats .stat-items, .about .stat-items {
     display: flex;
@@ -366,7 +379,7 @@
   width: 100%;
   text-align: left;
   color: hsl(0deg, 0%, 48%);
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.6;
   font-weight: 500;
 }
@@ -381,13 +394,20 @@
   flex-direction: column;
   align-items: flex-start;
 }
-.card h2, .modal-card h2 {
+.card p, .modal-card p {
+  font-size: 16px;
+}
+.card .card-title, .modal-card .card-title {
+  display: flex;
+  flex-direction: column;
+}
+.card .card-title h2, .modal-card .card-title h2 {
   font-size: 12px;
 }
-.card .card-name, .modal-card .card-name, .modal-card .card-header-stock .card-header .topPart .titles .modal-card-name {
+.card .card-title .card-name, .card .card-title .modal-card .card-header-stock .card-header .topPart .titles .modal-card-name, .modal-card .card-title .card-name, .modal-card .card-title .card-header-stock .card-header .topPart .titles .modal-card-name, .modal-card .card-header-stock .card-header .topPart .titles .card-title .modal-card-name {
   margin: 0px 0px 4px 0px;
 }
-.card .card-pledge, .modal-card .card-pledge {
+.card .card-title .card-pledge, .modal-card .card-title .card-pledge {
   margin-left: 0;
   margin-top: 0;
   color: hsl(176deg, 50%, 47%);
@@ -416,7 +436,9 @@
   cursor: pointer;
   margin-top: 20px;
 }
-.card .cta-reward:hover, .modal-card .cta-reward:hover, .card .cta-reward :active, .modal-card .cta-reward :active {
+.card .cta-reward:hover, .modal-card .cta-reward:hover,
+.card .cta-reward :active,
+.modal-card .cta-reward :active {
   background-color: hsl(176deg, 72%, 28%);
 }
 .card.disabled, .disabled.modal-card {
@@ -425,7 +447,30 @@
 .card.disabled .cta-reward, .disabled.modal-card .cta-reward {
   background-color: hsl(0deg, 0%, 48%);
 }
+.card .bottom-part, .modal-card .bottom-part {
+  display: flex;
+  flex-direction: column;
+}
 
+@media screen and (min-width: 1440px) {
+  .card-title {
+    flex-direction: row !important;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .card-title .card-name, .card-title .modal-card .card-header-stock .card-header .topPart .titles .modal-card-name, .modal-card .card-header-stock .card-header .topPart .titles .card-title .modal-card-name {
+    font-size: 16px !important;
+  }
+  .card-title .card-pledge {
+    text-align: right;
+    font-size: 16px !important;
+  }
+  .bottom-part {
+    flex-direction: row !important;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
 .mobileMenu {
   position: absolute;
   top: 70px;
@@ -515,15 +560,24 @@
   align-items: flex-start;
 }
 
-.card h2, .modal-card h2 {
+.card p, .modal-card p {
+  font-size: 16px;
+}
+
+.card .card-title, .modal-card .card-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .card-title h2, .modal-card .card-title h2 {
   font-size: 12px;
 }
 
-.card .card-name, .modal-card .card-name, .modal-card .card-header-stock .card-header .topPart .titles .modal-card-name {
+.card .card-title .card-name, .modal-card .card-title .card-name, .card .card-title .modal-card .card-header-stock .card-header .topPart .titles .modal-card-name, .modal-card .card-title .card-header-stock .card-header .topPart .titles .modal-card-name, .modal-card .card-header-stock .card-header .topPart .titles .card-title .modal-card-name {
   margin: 0px 0px 4px 0px;
 }
 
-.card .card-pledge, .modal-card .card-pledge {
+.card .card-title .card-pledge, .modal-card .card-title .card-pledge {
   margin-left: 0;
   margin-top: 0;
   color: hsl(176deg, 50%, 47%);
@@ -556,7 +610,9 @@
   margin-top: 20px;
 }
 
-.card .cta-reward:hover, .modal-card .cta-reward:hover, .card .cta-reward :active, .modal-card .cta-reward :active {
+.card .cta-reward:hover, .modal-card .cta-reward:hover,
+.card .cta-reward :active,
+.modal-card .cta-reward :active {
   background-color: hsl(176deg, 72%, 28%);
 }
 
@@ -568,6 +624,30 @@
   background-color: hsl(0deg, 0%, 48%);
 }
 
+.card .bottom-part, .modal-card .bottom-part {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1440px) {
+  .card-title {
+    flex-direction: row !important;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .card-title .card-name, .card-title .modal-card .card-header-stock .card-header .topPart .titles .modal-card-name, .modal-card .card-header-stock .card-header .topPart .titles .card-title .modal-card-name {
+    font-size: 16px !important;
+  }
+  .card-title .card-pledge {
+    text-align: right;
+    font-size: 16px !important;
+  }
+  .bottom-part {
+    flex-direction: row !important;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
 input[type=radio] {
   /* Add if not using autoprefixer */
   -webkit-appearance: none;
@@ -641,11 +721,15 @@ input[type=radio]:focus {
   align-items: flex-start;
   margin-left: 10px;
 }
+.modal-card .card-header-stock .card-header .topPart .titles .card-pledge {
+  color: hsl(176deg, 50%, 47%) !important;
+}
 .modal-card .card-header-stock .card-header .topPart .titles .modal-card-name {
   margin-bottom: 0;
 }
 .modal-card .card-header-stock .card-header p {
   margin-top: 0;
+  font-size: 16px;
 }
 .modal-card .hiddenPart {
   display: none;

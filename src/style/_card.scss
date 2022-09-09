@@ -11,20 +11,27 @@
   flex-direction: column;
   align-items: flex-start;
 
-  h2 {
-    font-size: 12px;
+  p {
+    font-size: 16px;
   }
 
-  .card-name {
-    margin: 0px 0px 4px 0px;
-  }
+  .card-title {
+    display: flex;
+    flex-direction: column;
 
-  .card-pledge {
-    margin-left: 0;
-    margin-top: 0;
-    color: $cyanModerate;
-  }
+    h2 {
+      font-size: 12px;
+    }
+    .card-name {
+      margin: 0px 0px 4px 0px;
+    }
 
+    .card-pledge {
+      margin-left: 0;
+      margin-top: 0;
+      color: $cyanModerate;
+    }
+  }
   .card-stock {
     display: flex;
     align-items: center;
@@ -53,8 +60,9 @@
     margin-top: 20px;
     // width: 70%;
 
-    &:hover, :active {
-      background-color: $cyanDark
+    &:hover,
+    :active {
+      background-color: $cyanDark;
     }
   }
 
@@ -63,5 +71,32 @@
     .cta-reward {
       background-color: $greyDark;
     }
+  }
+
+  .bottom-part {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card-title {
+    flex-direction: row !important;
+    width: 100%;
+    justify-content: space-between;
+
+    .card-name {
+      font-size: 16px !important;
+    }
+    .card-pledge {
+      text-align: right;
+      font-size: 16px !important;
+    }
+  }
+
+  .bottom-part {
+    flex-direction: row !important;
+    width: 100%;
+    justify-content: space-between;
   }
 }
