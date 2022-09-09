@@ -1,0 +1,42 @@
+// @import '~bootstrap/scss/bootstrap.scss';
+@import './colors';
+@import './topMenu';
+@import './hero';
+@import './stats';
+@import './about';
+@import './card';
+@import './mobileMenu';
+@import './modal';
+@import './modalCard';
+@import './modalComplete';
+// @import "~bootstrap/scss/bootstrap";
+
+* {
+  box-sizing: border-box;
+  font-family: 'Commissioner', sans-serif;
+  font-size: 16px;
+  // outline: 1px solid red !important;
+}
+
+body {
+  margin: 0;
+  // position: relative;
+  background-color: $bodyBackground;
+  min-width: 100vw;
+  text-align: center;
+  // position: fixed;
+  // overflow-x: hidden !important;
+}
+
+.container {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+#portal {
+  overflow-y: scroll;
+  // width: 100%;
+  // overflow-x: hidden;
+}

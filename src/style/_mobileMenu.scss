@@ -1,0 +1,37 @@
+@import './colors';
+
+.mobileMenu {
+  position: absolute;
+  top: 70px;
+  z-index: 99;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: transparent;
+  align-items: center;
+
+  .mobileMenuWrapper {
+    width: 80%;
+    max-width: 1000px;
+    // margin: 0 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 7px;
+    a {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      height: 40px;
+      width: 90%;
+      padding: 30px 0;
+      color: black;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid $grey;
+    }
+  }
+}

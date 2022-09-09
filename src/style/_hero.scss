@@ -1,0 +1,136 @@
+@import './colors';
+
+.hero {
+  //   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 0;
+  height: 300px;
+  background-image: url('../../public/assets/img/image-hero-mobile.jpg');
+  background-position-y: 0;
+  // background-position-x: -100px;
+  background-size: cover;
+  // object-fit: fill;
+  background-repeat: no-repeat;
+  .heroImage {
+    width: 100%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    //   background-image: url('../../public/assets/img/image-hero-mobile.jpg');
+  }
+
+  .heroBox {
+    width: 80%;
+    // height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    align-self: center;
+    bottom: -250px;
+    // left: 40vw;
+    background-color: #fff;
+    padding: 10px 20px;
+
+    .logo {
+      position: absolute;
+      top: -27px;
+      //   margin-bottom: 100px;
+    }
+    .title {
+      margin-top: 50px;
+      font-size: 21px;
+      font-weight: 700;
+    }
+    .description {
+      margin: 20px 0;
+      color: $greyDark;
+    }
+
+    .CTAs {
+      margin: 20px 0;
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+
+      .cta-main {
+        background-color: $cyanModerate;
+        border-radius: 35px;
+        outline: none;
+        border: none;
+        padding: 15px 35px;
+        padding-bottom: 18px;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover,
+        :active {
+          background-color: $cyanDark;
+        }
+      }
+
+      .cta-bookmark {
+        background-color: black;
+        padding: 0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        border: none;
+        width: fit-content;
+        // cursor: pointer;
+
+        span {
+          display: none;
+        }
+
+        img {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hero {
+    background-image: url('../../public/assets/img/image-hero-desktop.jpg') !important;
+    background-blend-mode: darken;
+
+    background-size: cover;
+
+    height: 400px;
+
+    .heroBox {
+      bottom: -180px;
+      max-width: 1000px;
+    }
+    .cta-bookmark {
+      width: 200px;
+      border-radius: 30px !important;
+      justify-content: flex-start !important;
+      background-color: $grey !important;
+      // width: 200px;
+
+      span {
+        display: inline !important;
+        margin: 0 20px;
+        font-weight: 700;
+      }
+
+      &.bookmarked {
+        span {
+          color: $cyanModerate !important;
+        }
+      }
+    }
+  }
+}

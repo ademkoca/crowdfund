@@ -1,0 +1,121 @@
+@use './card';
+@import './colors';
+@import './radio';
+.modal-card {
+  @extend .card;
+  width: 100%;
+
+  p {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  .card-header-stock {
+    display: flex;
+    flex-direction: column;
+
+    .card-header {
+      display: flex;
+      flex-direction: column;
+      .topPart {
+        display: flex;
+        align-items: center;
+
+        .titles {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-left: 10px;
+
+          .modal-card-name {
+            @extend .card-name;
+            margin-bottom: 0;
+          }
+        }
+      }
+      p {
+        margin-top: 0;
+      }
+    }
+  }
+  .hiddenPart {
+    // display: flex;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid $grey;
+    margin-top: 10px;
+
+    h4 {
+      font-size: 14px;
+      color: $greyDark;
+      font-weight: 400;
+    }
+
+    .bottomPart {
+      display: flex;
+      justify-content: space-evenly;
+      width: fit-content;
+      align-items: center;
+
+      .input {
+        width: 40%;
+        border-radius: 25px;
+        outline: none;
+        border: 1px solid $greyDark;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #fff;
+        padding: 4px;
+        z-index: 1010;
+        input {
+          border: none;
+          width: 50%;
+          height: 35px;
+          padding: 0;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .cta-reward {
+        width: 40%;
+        padding: 5px 5px;
+        font-size: 12px;
+        margin-top: 0;
+        height: 45px;
+      }
+    }
+  }
+
+  &.selected {
+    border: 2px solid $cyanModerate;
+  }
+}
+
+.show {
+  display: flex !important;
+}
+
+@media screen and (min-width: 1440px) {
+  .card-header-stock {
+    width: 100%;
+    flex-direction: row !important;
+    justify-content: space-between;
+
+    .titles {
+      flex-direction: row !important;
+      .modal-card-name {
+        margin-right: 20px !important;
+      }
+    }
+  }
+
+  .hiddenPart {
+    flex-direction: row !important;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 20px !important;
+  }
+}
