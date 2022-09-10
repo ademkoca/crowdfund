@@ -12,14 +12,18 @@ const ModalCard = ({ open, onClose, ...props }) => {
   };
   const handleSubmit = (e) => {
     e.stopPropagation();
-    if (pledgeInput !== null) {
+    if (
+      pledgeInput !== null &&
+      typeof pledgeInput === 'number' &&
+      !isNaN(pledgeInput)
+    ) {
       if (pledgeInput < card.pledge)
         alert('You must pledge $' + card.pledge + ' or more!');
       else {
         toggleCompletedUpdate();
         onClose();
       }
-    } else alert('You must enter a value');
+    } else alert('You must enter a number');
   };
   return (
     <>
@@ -29,8 +33,8 @@ const ModalCard = ({ open, onClose, ...props }) => {
           selected && card.stock !== 0 ? 'selected' : ''
         }`}
       >
-        <div className='card-header-stock'>
-          <div className='card-header'>
+        <div className="card-header-stock">
+          <div className="card-header">
             <div className="topPart">
               {selected && card.stock !== 0 && (
                 <input type="radio" defaultChecked />
@@ -53,7 +57,7 @@ const ModalCard = ({ open, onClose, ...props }) => {
           <div className="bottomPart">
             <div
               className="input"
-              onChange={(e) => setPledgeInput(e.target.value)}
+              onChange={(e) => setPledgeInput(parseInt(e.target.value))}
               onClick={(e) => {
                 handleInput(e);
               }}
