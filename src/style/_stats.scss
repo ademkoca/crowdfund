@@ -40,14 +40,16 @@
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+
     progress {
       height: 15px;
       background-color: $greyDark;
       border-radius: 50px;
       width: 80%;
+      // background-color: $cyanModerate;
     }
     progress::-webkit-progress-value {
-      background-color: $cyanModerate;
+      background-color: $cyanModerate !important;
       border-radius: 50px;
     }
     progress::-webkit-progress-bar {

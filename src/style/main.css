@@ -230,7 +230,7 @@
   width: 80%;
 }
 .stats .progress progress::-webkit-progress-value, .about .progress progress::-webkit-progress-value {
-  background-color: hsl(176deg, 50%, 47%);
+  background-color: hsl(176deg, 50%, 47%) !important;
   border-radius: 50px;
 }
 .stats .progress progress::-webkit-progress-bar, .about .progress progress::-webkit-progress-bar {
@@ -320,7 +320,7 @@
   width: 80%;
 }
 .stats .progress progress::-webkit-progress-value, .about .progress progress::-webkit-progress-value {
-  background-color: hsl(176deg, 50%, 47%);
+  background-color: hsl(176deg, 50%, 47%) !important;
   border-radius: 50px;
 }
 .stats .progress progress::-webkit-progress-bar, .about .progress progress::-webkit-progress-bar {
@@ -506,6 +506,11 @@
   border-bottom: 1px solid #c6c6c6;
 }
 
+@media screen and (min-width: 1440px) {
+  .mobileMenu {
+    display: none !important;
+  }
+}
 .backdrop {
   position: fixed;
   top: 0;
